@@ -15,13 +15,18 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Day2", "src\Day2\Day2.cspro
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Day2Tests", "test\Day2Tests\Day2Tests.csproj", "{03F71129-A202-4B10-9A1E-4B4BF6ED4D46}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Utils", "src\DataLoader\Utils.csproj", "{41760622-ACB2-47DB-890D-E52442E88AFC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Utils", "src\DataLoader\Utils.csproj", "{41760622-ACB2-47DB-890D-E52442E88AFC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UtilsTests", "test\UtilsTests\UtilsTests.csproj", "{497DA31B-3B06-471D-BB65-E0C690F75CD6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UtilsTests", "test\UtilsTests\UtilsTests.csproj", "{497DA31B-3B06-471D-BB65-E0C690F75CD6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Day3", "src\Day3\Day3.csproj", "{785FDE8C-F13B-41B7-8375-8DE28F53295F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Day3", "src\Day3\Day3.csproj", "{785FDE8C-F13B-41B7-8375-8DE28F53295F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Day3Tests", "test\Day3Tests\Day3Tests.csproj", "{73244E82-7162-4692-92B4-E8E9BC877F95}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Day3Tests", "test\Day3Tests\Day3Tests.csproj", "{73244E82-7162-4692-92B4-E8E9BC877F95}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{E57936B9-07A8-4A42-9FA5-AA3F36717DCF}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
