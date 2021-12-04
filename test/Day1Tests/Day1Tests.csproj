@@ -12,6 +12,7 @@
 	</ItemGroup>
 	
 	<ItemGroup>
+	  <ProjectReference Include="..\..\src\DataLoader\Utils.csproj" />
 	  <ProjectReference Include="..\..\src\Day1\Day1.csproj" />
 	</ItemGroup>
 

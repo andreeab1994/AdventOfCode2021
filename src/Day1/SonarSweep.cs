@@ -13,7 +13,6 @@ namespace Day1
         private SonarSweep()
         {
             DepthIncreases = 0;
-
         }
 
         public static SonarSweep Create() => new();
