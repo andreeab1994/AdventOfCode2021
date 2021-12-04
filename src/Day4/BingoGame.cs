@@ -27,35 +27,32 @@ namespace Day4
                 BingoSetsPlayed.Add(new BingoSet());
             }
 
-            //start with the first playing number
-            for (var number = 0; number < PlayingNumbers.Length; number++)
+            foreach (var number in PlayingNumbers)
             {
-                // check current boards
                 for (var bingoSets = 0; bingoSets < BingoSets.Count; bingoSets++)
                 {
-                    (int row, int column)? position = BingoSets[bingoSets].CheckNumber(PlayingNumbers[number]);
-                    
-                    if (position != null)
-                    {
-                        var currentBingoSetsPlayed = BingoSetsPlayed[bingoSets];
-                        currentBingoSetsPlayed.Table[position.Value.row, position.Value.column] =
-                            PlayingNumbers[number];
+                    var position = BingoSets[bingoSets].CheckNumber(number);
 
-                        if (PlayLosingGame)
+                    if (position == null) continue;
+                    
+                    var currentBingoSetsPlayed = BingoSetsPlayed[bingoSets];
+                    currentBingoSetsPlayed.Table[position.Value.row, position.Value.column] =
+                        number;
+
+                    if (PlayLosingGame)
+                    {
+                        var winningSet = CheckWinningPossibilityMultipleSets();
+                        if (winningSet.Count == BingoSets.Count)
                         {
-                            var winningSet = CheckWinningPossibilityMultipleSets();
-                            if (winningSet.Count == BingoSets.Count)
-                            {
-                                return CalculateWinningScore(bingoSets, PlayingNumbers[number]);
-                            }
+                            return CalculateWinningScore(bingoSets, number);
                         }
-                        else
+                    }
+                    else
+                    {
+                        var winningSet = CheckWinningPossibility();
+                        if (winningSet != null)
                         {
-                            var winningSet = CheckWinningPossibility();
-                            if (winningSet != null)
-                            {
-                                return CalculateWinningScore(winningSet.Value.setIndex, PlayingNumbers[number]);
-                            }
+                            return CalculateWinningScore(winningSet.Value.setIndex, number);
                         }
                     }
                 }
@@ -94,14 +91,12 @@ namespace Day4
         {
             for (var i = 0; i < BingoSetsPlayed.Count; i++)
             {
-                // check rows
-                if(CheckRows(BingoSetsPlayed[i]))
+                if(BingoSetsPlayed[i].CheckWinningRow())
                 {
                     return (true, i);
                 }
 
-                //check columns
-                if (CheckColumns(BingoSetsPlayed[i]))
+                if (BingoSetsPlayed[i].CheckWinningColumn())
                 {
                     return (true, i);
                 }
@@ -115,25 +110,13 @@ namespace Day4
             var winningSets = new List<int>();
             for (var i = 0; i < BingoSetsPlayed.Count; i++)
             {
-                // check rows
-                if (CheckRows(BingoSetsPlayed[i]) || CheckColumns(BingoSetsPlayed[i]))
+                if (BingoSetsPlayed[i].CheckWinningRow() || BingoSetsPlayed[i].CheckWinningColumn())
                 {
                     winningSets.Add(i);
                 }
             }
 
-
             return winningSets;
-        }
-
-        private bool CheckColumns(BingoSet bingoSet)
-        {
-            return bingoSet.CheckWinningColumn();
-        }
-
-        private bool CheckRows(BingoSet bingoSet)
-        {
-            return bingoSet.CheckWinningRow();
         }
     }
 }

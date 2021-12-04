@@ -34,8 +34,7 @@ public class BingoSet
         var rows = Table.GetLength(0);
         for (var i = 0; i < rows; i++)
         {
-            if (Table[i, 0] != null && Table[i, 1] != null && Table[i, 2] != null && Table[i, 3] != null &&
-                Table[i, 4] != null)
+            if (Table[i, 0] != null && Table[i, 1] != null && Table[i, 2] != null && Table[i, 3] != null && Table[i, 4] != null)
             {
                 return true;
             }
@@ -49,8 +48,7 @@ public class BingoSet
         var columns = Table.GetLength(1);
         for (var i = 0; i < columns; i++)
         {
-            if (Table[0,i] != null && Table[1, i] != null && Table[2, i] != null && Table[3, i] != null &&
-                Table[4, i] != null)
+            if (Table[0,i] != null && Table[1, i] != null && Table[2, i] != null && Table[3, i] != null && Table[4, i] != null)
             {
                 return true;
             }

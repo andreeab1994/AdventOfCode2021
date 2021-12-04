@@ -18,12 +18,11 @@ namespace Day4
                 }
                 else
                 {
-                    // one entry line, i spaces, and blocks
                     var skip = 1 + i + (5 * (i-1));
-                    var set = enumerable.Skip(skip).Take(5);
-                    if (set.Count() != 0)
+                    var set = enumerable.Skip(skip).Take(5).ToList();
+                    if (set.Any())
                     {
-                        output.BingoSets.Add(ProcessBingoSet(set, output));
+                        output.BingoSets.Add(ProcessBingoSet(set));
                     }
                     
                 }
@@ -32,12 +31,10 @@ namespace Day4
             return output;
         }
 
-        private static BingoSet ProcessBingoSet(IEnumerable<string> set, BingoGame output)
+        private static BingoSet ProcessBingoSet(IReadOnlyList<string> list)
         {
             var bingoSet = new BingoSet();
             
-            var list = set.ToList();
-
             for (var row = 0; row < list.Count; row++)
             {
                 var values = SanitiseInput(list[row]);

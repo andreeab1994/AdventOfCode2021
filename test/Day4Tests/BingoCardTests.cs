@@ -8,7 +8,7 @@ namespace Day4Tests
 {
     internal class BingoCardTests
     {
-        [Test(Description = ".")]
+        [Test(Description = "Challenge 1 example")]
         public void Challenge1Example()
         {
             var numbers = DataLoader.LoadLines("test.txt");
@@ -18,7 +18,7 @@ namespace Day4Tests
             score.Should().Be(4512);
         }
 
-        [Test(Description = ".")]
+        [Test(Description = "Challenge 1")]
         public void Challenge1()
         {
             var numbers = DataLoader.LoadLines("challengeInput.txt");
@@ -28,7 +28,7 @@ namespace Day4Tests
             Console.WriteLine(score);
         }
 
-        [Test(Description = ".")]
+        [Test(Description = "Challenge 2 example")]
         public void Challenge2Example()
         {
             var numbers = DataLoader.LoadLines("test.txt");
@@ -39,7 +39,7 @@ namespace Day4Tests
             score.Should().Be(1924);
         }
 
-        [Test(Description = ".")]
+        [Test(Description = "Challenge 2")]
         public void Challenge2()
         {
             var numbers = DataLoader.LoadLines("challengeInput.txt");
