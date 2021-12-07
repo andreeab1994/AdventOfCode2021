@@ -28,7 +28,6 @@ namespace Day7Tests
 
             var crabs = new Crabs(input);
 
-
             var calc = crabs.CalculateFuelConsumption();
             calc.Should().Be(355521);
             Console.WriteLine(calc);
@@ -43,7 +42,6 @@ namespace Day7Tests
 
             var calc = crabs.CalculateFuelConsumption(true);
             calc.Should().Be(168);
-
         }
 
         [Test(Description = "Challenge 2")]

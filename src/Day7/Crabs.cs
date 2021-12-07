@@ -9,7 +9,6 @@ namespace Day7
         public Crabs(IEnumerable<string> input)
         {
             CrabsList = ConvertDataChallenge(input);
-            
         }
 
         public List<int> CrabsList { get; set; }
@@ -37,7 +36,7 @@ namespace Day7
         {
             var calculations = new Dictionary<int, long>();
 
-            for (var i = 0; i < CrabsList.Count; i++)
+            for (var i = 1; i <= CrabsList.Count; i++)
             {
                 var iteration = new Dictionary<int, long>();
        
